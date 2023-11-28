@@ -1,9 +1,22 @@
 .header {
   display: flex;
   justify-content: space-between;
-  margin: 30px 45px 0 45px;
-//   background-color: beige;
+  margin: 45px 100px 0 100px;
 }
 
 .nav {
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $color-primary;
+    .active {
+        text-decoration: underline;
+    }
+    
+    .navLink {
+        color: $color-primary;
+        font-weight: 500;
+    }
 }
+
