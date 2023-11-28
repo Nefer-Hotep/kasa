@@ -4,9 +4,9 @@ import LogoKasa from './icons/logo.svg';
 function Header() {
   return (
     <>
-      <header>
+      <header className='header'>
         <img src={LogoKasa} alt="Logo Kasa" />
-        <nav>
+        <nav className='nav'>
           <Link to='/Home'>Acceuil</Link>
           <Link to='/About'>A propos</Link>
         </nav>
