@@ -1,0 +1,41 @@
+.main {
+  margin-top: 50px;
+  padding: 0px 100px;
+
+  &__banner {
+    position: relative;
+  }
+
+  &__banner img {
+    border-radius: 25px;
+    object-fit: cover;
+    width: 100%;
+    height: 223px;
+  }
+  &__banner h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+  }
+
+  &__banner::before {
+    content: '';
+    height: 223px;
+    border-radius: 25px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.326);
+  }
+
+  &__gallery {
+    height: 829px;
+    margin-top: 43px;
+    border-radius: 25px;
+    background-color: #f6f6f6;
+  }
+}

@@ -7,7 +7,7 @@ function Header() {
       <header className='header'>
         <img src={LogoKasa} alt='Logo Kasa' />
         <nav className='nav'>
-          <NavLink to='/Home' className='navLink'>
+          <NavLink to='/' className='navLink'>
             Acceuil
           </NavLink>
           <NavLink to='/About' className='navLink'>

@@ -4,7 +4,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Rental from './pages/Rental';
 import About from './pages/About';
-import Error from './pages/Error';
+import ErrorPage from './pages/ErrorPage';
 
 const router = createBrowserRouter([
   {
@@ -16,22 +16,23 @@ const router = createBrowserRouter([
         <Footer />
       </>
     ),
+    errorElement: <ErrorPage />,
+
     children: [
       {
-        path: 'About',
-        element: <About />,
-      },
-      {
-        path: 'Home',
+        path: '/',
         element: <Home />,
+        errorElement: <ErrorPage />,
       },
       {
-        path: 'Rental',
+        path: 'about',
+        element: <About />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: 'rental',
         element: <Rental />,
-      },
-      {
-        path: 'Error',
-        element: <Error />,
+        errorElement: <ErrorPage />,
       },
     ],
   },
