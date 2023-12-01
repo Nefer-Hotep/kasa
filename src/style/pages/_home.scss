@@ -33,9 +33,26 @@
   }
 
   &__gallery {
-    height: 829px;
+    height: 800px;
     margin-top: 43px;
     border-radius: 25px;
     background-color: #f6f6f6;
+
+    ul {
+      display: flex;
+      grid-template-columns: repeat(auto-fill, 1fr);
+      gap: 10px;
+    }
+
+    li {
+      height: 360px;
+      width: 340px;
+      background: $color-primary;
+      border-radius: 8px;
+      color: white;
+      img {
+        width: 100%;
+      }
+    }
   }
 }
