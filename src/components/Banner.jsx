@@ -1,11 +1,14 @@
-import HomeImage from "../style/assets/img/home-image.png"
+import HomeImage from '../style/assets/img/home-image.png';
 
 function Banner() {
   return (
-      <div className='main__banner'>
-        <img src={HomeImage} alt='Rivage rocheux' />
-        <h2>Chez vous, partout et ailleurs</h2>
-      </div>
+    <div className='banner'>
+      <img src={HomeImage} className='banner__img' alt='Rivage rocheux' />
+      <h2 className='banner__title'>
+        Chez vous,
+        <br className='mobile-break' /> partout et ailleurs
+      </h2>
+    </div>
   );
 }
 

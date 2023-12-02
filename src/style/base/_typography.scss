@@ -3,11 +3,34 @@
   font-family: $font-primary;
 }
 
-.main__banner h2 {
+.navLink {
+  @media(max-width: 450px) {
+    font-size: 12px;
+  }
+}
+
+
+.banner__title {
   white-space: nowrap;
   font-size: 48px;
 }
 
+.card__title {
+  font-size: 18px;
+  color: white;
+}
+
+@media(max-width: 1040px) {
+  * {
+    font-size: 18px;
+  }
+
+  .banner__title {
+    white-space: nowrap;
+    font-size: 24px;
+  }
+
+}
 .error {
   color: $color-primary;
   h1 {
@@ -21,3 +44,4 @@
     color: $color-primary;
   }
 }
+

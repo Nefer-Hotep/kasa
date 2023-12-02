@@ -1,0 +1,52 @@
+.banner {
+  position: relative;
+  height: 223px;
+  display: flex;
+
+  &__img {
+    border-radius: 25px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  &__title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    @media(max-width: 410px) {
+      // transform: translate(-50%, 50%);
+    }
+  }
+
+  &::before {
+    content: '';
+    height: 223px;
+    border-radius: 25px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.326);
+  }
+
+  .mobile-break {
+    display: none;
+
+    @media (max-width: 410px) {
+      justify-content: flex-start;
+      display: block;
+    }
+  }
+
+  @media (max-width: 1040px) {
+    height: 111px;
+
+    &::before {
+      height: 111px;
+    }
+  }
+
+}

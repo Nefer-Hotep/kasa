@@ -1,23 +1,31 @@
 .header {
   display: flex;
   justify-content: space-between;
-  margin: 45px 100px 0 100px;
-  
+  padding: 45px 100px 0 100px;
+
+  @media (max-width: 1040px) {
+    padding: 20px 20px 0 20px;
+  }
+
+  @media (max-width: 450px) {
+    &__img {
+      width: 145px;
+    }
+  }
 }
 
 .nav {
-    width: 250px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  
+  .active {
+    text-decoration: underline;
+  }
+  
+  .navLink {
+    padding-left: 26px;
     color: $color-primary;
-    .active {
-        text-decoration: underline;
-    }
-    
-    .navLink {
-        color: $color-primary;
-        font-weight: 500;
-    }
+    font-weight: 500;
+  }
 }
-

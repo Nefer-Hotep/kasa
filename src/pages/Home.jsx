@@ -23,16 +23,14 @@ function Home() {
     <>
       <main className='main'>
         <Banner />
-        <section className='main__gallery'>
-          <ul>
-            {items.map((item, index) => (
-              <li key={index}>
-                <img src={item.cover} alt='' />
-                <h2>{item.title}</h2>
-              </li>
-            ))}
-          </ul>
-        </section>
+        <ul className='gallery'>
+          {items.map((item, index) => (
+            <li key={index} className='card'>
+              <img src={item.cover} className='card__img' alt={item.over} />
+              <h2 className='card__title'>{item.title}</h2>
+            </li>
+          ))}
+        </ul>
       </main>
     </>
   );

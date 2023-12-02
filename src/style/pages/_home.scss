@@ -1,58 +1,55 @@
 .main {
-  margin-top: 50px;
-  padding: 0px 100px;
+  padding: 50px 100px;
 
-  &__banner {
-    position: relative;
+  @media(max-width: 1040px) {
+    padding: 20px;
+  }
+}
+
+.gallery {
+  height: 100%;
+  margin-top: 43px;
+  border-radius: 25px;
+  background-color: #f6f6f6;
+  padding: 56px 50px;
+  display: grid;
+  grid-template-columns: 
+    repeat(auto-fit, minmax(340px, 1fr));
+  grid-column-gap: 60px;
+  grid-row-gap: 50px;
+
+  @media(max-width: 1040px) {
+    margin-top: 22px;
   }
 
-  &__banner img {
-    border-radius: 25px;
+  @media(max-width: 768px) {
+    grid-template-columns: 
+    repeat(auto-fit, minmax(335px, 1fr));
+    padding: 0;
+    background-color: white;
+    grid-row-gap: 20px;
+  }
+}
+
+.card {
+  position: relative;
+  max-height: 340px;
+  
+  &__img {
+    border-radius: 8px;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
+    height: 100%;
     width: 100%;
-    height: 223px;
   }
-  &__banner h2 {
+
+  &__title {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #ffffff;
+    bottom: 20px;
+    left: 20px;
   }
 
-  &__banner::before {
-    content: '';
-    height: 223px;
-    border-radius: 25px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.326);
-  }
-
-  &__gallery {
-    height: 800px;
-    margin-top: 43px;
-    border-radius: 25px;
-    background-color: #f6f6f6;
-
-    ul {
-      display: flex;
-      grid-template-columns: repeat(auto-fill, 1fr);
-      gap: 10px;
-    }
-
-    li {
-      height: 360px;
-      width: 340px;
-      background: $color-primary;
-      border-radius: 8px;
-      color: white;
-      img {
-        width: 100%;
-      }
-    }
+  @media(max-width: 768px) {
+    height: 255px;
   }
 }
