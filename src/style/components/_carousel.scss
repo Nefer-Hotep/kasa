@@ -1,0 +1,52 @@
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 415px;
+  @media (max-width: 1040px) {
+    height: 255px;
+  }
+
+  &__img {
+    height: 415px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 25px;
+
+    @media (max-width: 1040px) {
+      height: 255px;
+    }
+  }
+  &__counter {
+    position: absolute;
+    color: white;
+    bottom: 0;
+    margin-bottom: 24px;
+    right: 50%;
+  }
+}
+
+.btn__next,
+.btn__prev {
+  position: absolute;
+  background: url(../assets/icons/arrow-btn.svg) center center / 39px 79px
+  no-repeat;
+  height: 79px;
+  width: 39px;
+
+  @media (max-width: 1040px) {
+    background: url(../assets/icons/arrow-btn.svg) center center / 24px 24px
+      no-repeat;
+  }
+}
+
+.btn {
+  &__next {
+    right: 24px;
+  }
+
+  &__prev {
+    left: 24px;
+    transform: rotate(180deg);
+  }
+}

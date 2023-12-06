@@ -8,7 +8,7 @@ function Header() {
         <img src={LogoKasa} className='header__img' alt='Logo Kasa' />
         <nav className='nav'>
           <NavLink to='/' className='navLink'>
-            Acceuil
+            Accueil
           </NavLink>
           <NavLink to='/About' className='navLink'>
             A Propos

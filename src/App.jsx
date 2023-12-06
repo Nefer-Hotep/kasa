@@ -28,17 +28,14 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
-        errorElement: <ErrorPage />,
       },
       {
         path: 'about/',
         element: <About />,
-        errorElement: <ErrorPage />,
       },
       {
         path: '/rental/:id',
         element: <Rental />,
-        errorElement: <ErrorPage />,
       },
     ],
   },

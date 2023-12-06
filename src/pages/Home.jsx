@@ -1,29 +1,27 @@
 import Banner from '../components/Banner';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import useFetch from '../hooks/UseFetch';
+import ErrorPage from './ErrorPage';
+import Card from '../components/Card';
 
 function Home() {
+  const { data, error } = useFetch('../data.json');
 
-  const data  = useFetch('data.json');
+  if (error) {
+    return <ErrorPage />;
+  }
 
   return (
-    <>
-      <main className='main'>
-        <Banner />
-        <ul className='gallery'>
-          {data?.map((item, index) => (
-            <NavLink
-              to={{ pathname: `/Rental/${item.id}`, state: { item } }}
-              key={index}
-              className='card'
-            >
-              <img src={item.cover} className='card__img' alt={item.over} />
-              <h2 className='card__title'>{item.title}</h2>
-            </NavLink>
-          ))}
-        </ul>
-      </main>
-    </>
+    <main className='main'>
+      <Banner />
+      <ul className='gallery'>
+        {data?.map((item, index) => (
+          <Link to={{ pathname: `/rental/${item.id}` }} key={index} className='card'>
+            <Card cover={item.cover} title={item.title} />
+          </Link>
+        ))}
+      </ul>
+    </main>
   );
 }
 
