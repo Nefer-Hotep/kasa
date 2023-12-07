@@ -1,0 +1,58 @@
+.main {
+    color: $color-primary;
+}
+
+.rental{
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.article-header {
+    &__tags {
+        display: flex;
+        margin-top: 20px;
+        height: 25px;
+        gap: 10px;
+    }
+
+    &__tags p {
+        @include center;
+        min-width: 115px;
+        padding: 0 30px;
+        color: white;
+        background-color: $color-primary;
+        border-radius: 10px;
+    }
+}
+
+.profile {
+    &__container {
+        display: flex;
+        justify-content: end;
+    }
+
+    &__name {
+        display: block;
+        align-self: center;
+        padding-right: 10px;
+    }
+
+    &__img {
+        height: 64px;
+        border-radius: 50%;
+    }
+
+    &__lastName {
+        display: flex;
+        justify-content: end;
+    }
+
+    &__rating {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: 21px;
+        gap: 15px;
+    }
+}
