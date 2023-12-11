@@ -1,58 +1,121 @@
-.main {
-    color: $color-primary;
+.rental-container {
+  margin: 24px 0px 50px;
 }
 
-.rental{
-    margin-top: 24px;
-    display: flex;
-    justify-content: space-between;
+.rental-header {
+  display: flex;
+  justify-content: space-between;
 }
 
 .article-header {
-    &__tags {
-        display: flex;
-        margin-top: 20px;
-        height: 25px;
-        gap: 10px;
-    }
+  &__tags {
+    display: flex;
+    margin-top: 20px;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
 
-    &__tags p {
-        @include center;
-        min-width: 115px;
-        padding: 0 30px;
-        color: white;
-        background-color: $color-primary;
-        border-radius: 10px;
-    }
+  &__tags p {
+    @include center;
+    padding: 3px 30px;
+    color: white;
+    background-color: $color-primary;
+    border-radius: 10px;
+  }
 }
 
 .profile {
-    &__container {
-        display: flex;
-        justify-content: end;
+  &__container {
+    display: flex;
+    justify-content: end;
+  }
+
+  &__name {
+    display: block;
+    text-align: end;
+    align-self: center;
+    padding-right: 10px;
+  }
+
+  &__img {
+    height: 64px;
+    border-radius: 50%;
+  }
+
+  &__lastName {
+    display: flex;
+    justify-content: end;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    margin-top: 21px;
+    gap: 15px;
+  }
+}
+
+.rental-dropdown {
+  display: flex;
+  margin-top: 24px;
+  gap: 76px;
+}
+
+@media (max-width: 1040px) {
+  .rental-container {
+    margin: 15px 0px 27px;
+  }
+
+  .rental-header {
+    flex-direction: column;
+  }
+
+  .profile {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  .rental-dropdown {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .article-header {
+    &__tags {
+      margin-top: 10px;
+      height: 18px;
     }
 
-    &__name {
-        display: block;
-        align-self: center;
-        padding-right: 10px;
+    &__tags p {
+      height: 100%;
+      border-radius: 5px;
+      padding: 2px 20px;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .profile {
+    margin-top: 16px;
+
+    &__container {
+      height: 33px;
     }
 
     &__img {
-        height: 64px;
-        border-radius: 50%;
-    }
-
-    &__lastName {
-        display: flex;
-        justify-content: end;
+      align-items: center;
+      align-self: center;
+      height: 32px;
     }
 
     &__rating {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        margin-top: 21px;
-        gap: 15px;
+      margin-top: 0;
+      gap: 6px;
     }
+
+    &__rating img {
+      height: 13px;
+    }
+  }
 }

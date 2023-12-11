@@ -1,12 +1,20 @@
-import HomeImage from '../style/assets/img/home-image.png';
+import PropTypes from 'prop-types';
 
-function Banner() {
+Banner.propTypes = {
+  image: PropTypes.string,
+  title: PropTypes.string,
+};
+
+function Banner({ image, title }) {
+  const [firstTitle, lastTitle] = title ? title.split('|') : ['', ''];
+
   return (
     <div className='banner'>
-      <img src={HomeImage} className='banner__img' alt='Rivage rocheux' />
+      <img src={image} className='banner__img' alt={image} />
       <h2 className='banner__title'>
-        Chez vous,
-        <br className='mobile-break' /> partout et ailleurs
+        {firstTitle}
+        <br className='mobile-break' />
+        {lastTitle}
       </h2>
     </div>
   );

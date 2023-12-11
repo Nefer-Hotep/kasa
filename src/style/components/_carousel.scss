@@ -3,20 +3,14 @@
   display: flex;
   align-items: center;
   height: 415px;
-  @media (max-width: 1040px) {
-    height: 255px;
-  }
 
   &__img {
     height: 415px;
     width: 100%;
     object-fit: cover;
     border-radius: 25px;
-
-    @media (max-width: 1040px) {
-      height: 255px;
-    }
   }
+
   &__counter {
     position: absolute;
     color: white;
@@ -30,14 +24,9 @@
 .btn__prev {
   position: absolute;
   background: url(../assets/icons/arrow-btn.svg) center center / 39px 79px
-  no-repeat;
-  height: 79px;
+    no-repeat;
+  height: 79px; 
   width: 39px;
-
-  @media (max-width: 1040px) {
-    background: url(../assets/icons/arrow-btn.svg) center center / 24px 24px
-      no-repeat;
-  }
 }
 
 .btn {
@@ -48,5 +37,34 @@
   &__prev {
     left: 24px;
     transform: rotate(180deg);
+  }
+}
+
+@media (max-width: 1040px) {
+  .carousel {
+    height: 255px;
+
+    &__img {
+      height: 255px;
+      border-radius: 10px;
+    }
+  }
+
+  .btn__next,
+  .btn__prev {
+    background: url(../assets/icons/arrow-btn.svg) center center / 24px 24px
+      no-repeat;
+      height: 24px;
+      width: 24px;
+  }
+
+  .btn {
+    &__next {
+      right: 2px;
+    }
+
+    &__prev {
+      left: 2px;
+    }
   }
 }

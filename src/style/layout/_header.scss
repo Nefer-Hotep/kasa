@@ -2,30 +2,38 @@
   display: flex;
   justify-content: space-between;
   padding: 45px 100px 0 100px;
-
-  @media (max-width: 1040px) {
-    padding: 20px 20px 0 20px;
-  }
-
-  @media (max-width: 450px) {
-    &__img {
-      width: 145px;
-    }
-  }
 }
 
 .nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  
+  gap: 57px;
+
   .active {
     text-decoration: underline;
   }
-  
+
   .navLink {
-    padding-left: 26px;
     color: $color-primary;
     font-weight: 500;
+  }
+}
+
+@media (max-width: 1040px) {
+  .header {
+    padding: 20px 20px 0 20px;
+  }
+}
+
+@media (max-width: 450px) {
+  .header {
+    &__img {
+      width: 145px;
+    }
+  }
+
+  .nav {
+    gap: 26px;
   }
 }

@@ -1,0 +1,11 @@
+.about-dropdown {
+  display: flex;
+  flex-direction: column;
+  padding: 38px 108px 0px;
+  gap: 30px;
+  
+  @media (max-width: 1024px) {
+    padding: 19px 0px;
+    gap: 20px;
+  }
+}
