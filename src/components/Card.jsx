@@ -1,5 +1,11 @@
 import propTypes from 'prop-types'
 
+// Définition des types attendus pour les props du composant Card
+Card.propTypes = {
+  cover: propTypes.string,
+  title: propTypes.string
+}
+
 function Card({cover, title}) {
   return (
     <>
@@ -9,9 +15,5 @@ function Card({cover, title}) {
   );
 }
 
-Card.propTypes = {
-  cover: propTypes.string,
-  title: propTypes.string
-}
 
 export default Card;

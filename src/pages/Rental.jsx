@@ -6,19 +6,23 @@ import StarRating from '../components/StarRating';
 import Dropdown from '../components/Dropdown';
 
 function Rental() {
+  // Récupération de l'ID de la location à partir de l'URL avec le hooks useParams
   const { id } = useParams();
+  // Utilisation du hook useFetch pour charger les données
   const { data, error, loading } = useFetch('../data.json');
 
   if (loading) return <div className='loader'></div>;
 
   if (error) return <ErrorPage />;
 
+  // Trouver les données de la location spécifique en utilisant l'ID
   const rentalData = data?.find((item) => item.id === id);
 
   if (!rentalData) {
     return <ErrorPage />;
   }
 
+  // Destructuration pour extraire les données nécessaires de rentalData
   const {
     pictures: images,
     title,
@@ -31,6 +35,7 @@ function Rental() {
   } = rentalData;
   const { name, picture: profilePic } = host;
 
+  // Séparation du nom de l'hôte en prénom et nom de famille
   const [firstName, lastName] = name ? name.split(' ') : ['', ''];
 
   return (

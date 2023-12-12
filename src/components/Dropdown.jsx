@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 import arrowSvg from '../style/assets/icons/arrow-dropdown.svg';
 
+// Définition des types attendus pour les props du composant Dropdown
 Dropdown.propTypes = {
   title: PropTypes.string,
   text: PropTypes.string,
@@ -11,6 +12,7 @@ Dropdown.propTypes = {
 function Dropdown({ title, text, items }) {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Fonction pour basculer l'état isOpen
   const toggleDropdown = () => setIsOpen(!isOpen);
 
   return (

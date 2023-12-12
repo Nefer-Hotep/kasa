@@ -10,6 +10,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: (
+      // Structure de la page principale
       <>
         <Header />
         <Outlet />
@@ -17,13 +18,14 @@ const router = createBrowserRouter([
       </>
     ),
     errorElement: (
+      // Élément affiché en cas d'erreur de routage
       <>
         <Header />
         <ErrorPage />
         <Footer />
       </>
     ),
-
+    // Définition des routes enfants
     children: [
       {
         path: '/',
@@ -34,15 +36,17 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
+        // Chemin pour les détails de location avec un paramètre d'URL
         path: '/rental/:id',
         element: <Rental />,
-        errorElement:<ErrorPage/>
+        errorElement: <ErrorPage />,
       },
     ],
   },
 ]);
 
 function App() {
+  // Rendu du composant App qui fournit le routeur à l'application
   return <RouterProvider router={router} />;
 }
 
