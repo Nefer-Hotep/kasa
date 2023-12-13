@@ -30,26 +30,29 @@ function Carousel({ images }) {
             alt={`Slide ${currentIndex + 1}`}
             className='carousel__img'
           />
-          {/* Counter Display */}
-          <p className='carousel__counter'>
-            {/* Affiche l'index de l'image courante et le total d'images */}
-            {currentIndex + 1}/{images.length}
-          </p>
-          <button
-            onClick={goToPrevious}
-            className='btn__prev'
-            aria-label='Previous image'
-          ></button>
-          <button
-            onClick={goToNext}
-            className='btn__next'
-            aria-label='Next image'
-          ></button>
+          {/* Affiche les boutons uniquement si il y a plusieurs images */}
+          {images.length > 1 && (
+            <>
+              <p className='carousel__counter'>
+                {/* Affiche l'index de l'image courante et le total d'images */}
+                {currentIndex + 1}/{images.length}
+              </p>
+              <button
+                onClick={goToPrevious}
+                className='btn__prev'
+                aria-label='Previous image'
+              ></button>
+              <button
+                onClick={goToNext}
+                className='btn__next'
+                aria-label='Next image'
+              ></button>
+            </>
+          )}
         </>
       )}
     </div>
   );
 }
-
 
 export default Carousel;
