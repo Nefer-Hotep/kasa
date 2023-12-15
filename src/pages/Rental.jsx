@@ -13,14 +13,8 @@ function Rental() {
 
   if (loading) return <div className='loader'></div>;
 
-  if (error) return <ErrorPage />;
-
   // Trouver les données de la location spécifique en utilisant l'ID
   const rentalData = data?.find((item) => item.id === id);
-
-  if (!rentalData) {
-    return <ErrorPage />;
-  }
 
   // Destructuration pour extraire les données nécessaires de rentalData
   const {
@@ -40,42 +34,46 @@ function Rental() {
 
   return (
     <main className='main'>
-      {rentalData && (
-        <>
-          <Carousel images={images} />
-          <div className='rental-container'>
-            <div className='rental-header'>
-              <div className='article-header'>
-                <h1 className='article-header__title'>{title}</h1>
-                <h2 className='article-header__location'>{location}</h2>
-                <div className='article-header__tags'>
-                  {tags.map((element) => (
-                    <p key={element}>{element}</p>
-                  ))}
-                </div>
-              </div>
-              <div className='profile'>
-                <div className='profile__container'>
-                  <div className='profile__name'>
-                    <span className='profile__firstName'>{firstName}</span>
-                    <br />
-                    <span className='profile__lastName'>{lastName}</span>
+      {error ? (
+        <ErrorPage />
+      ) : (
+        rentalData && (
+          <>
+            <Carousel images={images} />
+            <div className='rental-container'>
+              <div className='rental-header'>
+                <div className='article-header'>
+                  <h1 className='article-header__title'>{title}</h1>
+                  <h2 className='article-header__location'>{location}</h2>
+                  <div className='article-header__tags'>
+                    {tags.map((element) => (
+                      <p key={element}>{element}</p>
+                    ))}
                   </div>
-                  <img
-                    className='profile__img'
-                    src={profilePic}
-                    alt={`Photo de profile de ${name}`}
-                  />
                 </div>
-                <StarRating rating={rating} />
+                <div className='profile'>
+                  <div className='profile__container'>
+                    <div className='profile__name'>
+                      <span className='profile__firstName'>{firstName}</span>
+                      <br />
+                      <span className='profile__lastName'>{lastName}</span>
+                    </div>
+                    <img
+                      className='profile__img'
+                      src={profilePic}
+                      alt={`Photo de profile de ${name}`}
+                    />
+                  </div>
+                  <StarRating rating={rating} />
+                </div>
+              </div>
+              <div className='rental-dropdown'>
+                <Dropdown title={'Description'} text={description} />
+                <Dropdown title={'Equipements'} items={equipments} />
               </div>
             </div>
-            <div className='rental-dropdown'>
-              <Dropdown title={'Description'} text={description} />
-              <Dropdown title={'Equipements'} items={equipments} />
-            </div>
-          </div>
-        </>
+          </>
+        )
       )}
     </main>
   );
