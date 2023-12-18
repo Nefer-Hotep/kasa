@@ -18,3 +18,16 @@
         margin-top: 28px;
     }
 }
+
+@media (max-width: 520px) {
+    .footer{
+        &__box {
+            display: flex;
+            align-items: center;
+        }
+
+        &__box h2 {
+            width: 100px;
+        }
+    }
+}

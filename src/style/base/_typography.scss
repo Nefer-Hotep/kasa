@@ -82,8 +82,9 @@
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 520px) {
   .navLink {
+    text-transform: uppercase;
     font-size: 12px;
   }
 
@@ -132,4 +133,10 @@
       font-size: 14px;
     }
   }
+
+   .footer__box {
+    h2 {
+      font-size: 12px;
+    }
+   }
 }

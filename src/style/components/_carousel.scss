@@ -68,3 +68,11 @@
     }
   }
 }
+
+@media (max-width: 520px) {
+  .carousel {
+    &__counter {
+      display: none;
+    }
+  }
+}
